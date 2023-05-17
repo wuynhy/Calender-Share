@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Calendar App</title>
+</head>
+<body>
+  <nav>
+    <a href="{% url 'event_calendar:event-list' %}">Event List</a>
+  </nav>
+  <hr>
+  {% block content %}
+  {% endblock %}
+</body>
+</html>
