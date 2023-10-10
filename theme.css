@@ -1,88 +1,86 @@
 /**
- * @name Solana
- * @version 1.0.11
+ * @name Float
+ * @version 2.0.21
  * @author Disease#3749
  * @authorId 678469587444170762
- * @description macOS with barely any customization.
- * @source https://github.com/maenDisease/BetterDiscordStuff/tree/main/Themes/Solana
+ * @description Compact mobile Discord with customization.
+ * @source https://github.com/maenDisease/BetterDiscordStuff/tree/main/Themes/Float
  * @invite BShu37e4jg
  * @website https://maendisease.github.io/
 */
 
-/* Source */
-@import url(https://maendisease.github.io/BetterDiscordStuff/Themes/Solana/Solana.css);
-
-/* Optional */
+/* Addons */
 @import url(https://maendisease.github.io/BetterDiscordStuff/css/bdAddonMini.css);
-@import url(https://maendisease.github.io/BetterDiscordStuff/Themes/Solana/addon/mac-titlebar.css);
-@import url(https://mwittrien.github.io/BetterDiscordAddons/Themes/EmojiReplace/base/Apple.css);
+
+/* Warning to Remove Minimum Size */
+@import url(https://maendisease.github.io/BetterDiscordStuff/Themes/Float/addon/RemoveMinimumSize.css) (width: 940px);
+
+/* Source */
+@import url(https://maendisease.github.io/BetterDiscordStuff/Themes/Float/Float.css) (max-width: 940px);
+
+/* If your theme has custom settings icons, delete or comment this line */
+@import url(https://maendisease.github.io/BetterDiscordStuff/Themes/Float/addon/SettingsIcons.css) (max-width: 940px);
 
 :root {
-    /* 
-    bdeditor.dev/theme/solana
-    is strongly recommended for customization 
-    */
+    /* Guildlist */
+    --guildicon-size: 48;
+    --enable-if-using-favorites-experiment: 0; /* boolean */
+    --guildlist-collapse: 0; /* boolean */
 
-    /* color control */
-    --accent-hue: 213;
-    --accent-saturation: 100%;
-    --accent-brightness: 50%;
-    --background-accent-hue: 213;
-    --background-accent-saturation: 100%;
-    --background-accent-brightness: 50%;
+    /* Channel sidebar */
+    --slide-window-on-hover: 1; /* boolean */
+    --float-sidebar-width: 48;
+    --sidebar-hover-width: 240px;
+    --sidebar-hover-delay: 0.2s;
+    --sidebar-transition-duration: 0.4s;
+    --sidebar-window-gap: 8px;
+    --sidebar-border-radius: 8px;
+    --sidebar-usersettings-width: 66px;
 
-    /* background image */
-    --background-image: initial;
-    --background-image-position: center;
-    --background-image-size: cover;
-    --background-image-blur: 0;
-    --background-overlay-opacity: 80%;
-    --background-overlay-color-lightness: 0;
-    --background-hue-shift-strength: 100%;
+    /* Memberlist */
+    --float-members-width: 65px;
+    --members-hover-width: 240px;
+    --members-hover-delay: 1.5s;
+    --members-transition-duration: 0.4s;
 
-    /* window */
-    --window-background-image: initial;
-    --window-background-image-position: center;
-    --window-background-image-attachment: fixed;
-    --window-opacity: 100%;
-    --window-blur: 0;
-    --window-friends-blur: 0;
-    --window-margin: 24;
-    --window-margin-left: 0;
-    --window-border-radius: 10px;
-    --window-background-lightness: 0;
-    --window-accent-tint-strength: 5%;
+    /* Channelheader */
+    --topic-opacity: 1;
+    --toolbar-visibility: flex; /* [flex][none] */
 
-    /* chat */
-    --chat-bubble: 0;
-    --chat-bubble-background-color: var(--background-primary);
-    --chat-bubble-border-color: var(--background-primary-border-color);
-    --text-link-hue: 212;
-    --chat-text-brightness: 0;
+    /* Textarea buttons */ /* [flex][none] */
+    --textarea-buttons-gif: flex;
+    --textarea-buttons-sticker: flex;
+    --textarea-buttons-gift: none;
 
-    /* dock */
-    --home-icon: initial;
-    --favorites-icon: initial;
-    --dock-blur: var(--window-blur);
-    --dock-border-radius: 0;
+    /* Theme compatibility */
+    /* --float-guildlist-width-correction: 0px; */
+}
 
-    /* sidebar */
-    --sidebar-width: 240px;
-    --members-width: 240px;
-    --sidebar-text-brightness: 0;
+/* The variables are used when the window is at the set sizes, each media query can be edited/deleted */
+@media (max-width:700px) {
+    :root {
+        --topic-opacity: 0;
+        --toolbar-visibility: none;
+        --textarea-buttons-gif: none;
+        --textarea-buttons-sticker: none;
+    }
+}
 
-    /* floating */
-    --background-floating-blur: 20px;
-    --floating-background-lightness: 0;
-    --background-floating-opacity: 1;
-    --enable-floating-transparency: 1;
+@media (max-width:500px) {
+    :root {
+        --guildicon-size: 40;
+        --float-members-width: 0;
+    }
+}
 
-    /* font */
-    --custom-font-display: "";
-    --custom-font-regular: "";
-    --custom-font-primary: "";
-    --custom-font-code: "";
+@media (max-width:400px) {
+    :root {
+        --float-sidebar-width: 0;
+    }
+}
 
-    /* other */
-    --enable-blur: 1;
+@media (max-width:300px) {
+    :root {
+        --guildlist-collapse: 1;
+    }
 }
